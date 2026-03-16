@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoang Minh Phan (Kady) - CV</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333333;
+            --light-text: #7f8c8d;
+            --bg-color: #f4f7f6;
+            --sidebar-bg: #2c3e50;
+            --main-bg: #ffffff;
+            --border-color: #ecf0f1;
+            --item-mb: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .cv-container {
+            width: 800px;
+            max-width: 100%;
+            background: var(--main-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 32%;
+            background-color: var(--sidebar-bg);
+            color: white;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 4px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .role {
+            font-size: 14px;
+            color: #bdc3c7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .sidebar-section h3 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        .contact-list, .skills-list, .lang-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 13px;
+            color: #bdc3c7;
+        }
+        
+        .contact-list i {
+            margin-top: 4px;
+            color: var(--accent-color);
+            width: 16px;
+            text-align: center;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ecf0f1;
+        }
+
+        .lang-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .lang-level {
+            font-size: 12px;
+            color: #95a5a6;
+            display: block;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            width: 68%;
+            padding: 40px 50px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+        }
+
+        .summary-text {
+            font-size: 14px;
+            color: var(--text-color);
+            text-align: justify;
+        }
+
+        .timeline-item {
+            margin-bottom: var(--item-mb);
+            position: relative;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-size: 14px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .date-location {
+            font-size: 12px;
+            color: var(--light-text);
+            font-weight: 500;
+            text-align: right;
+            min-width: 140px;
+        }
+
+        .job-desc {
+            font-size: 13px;
+            color: var(--text-color);
+            padding-left: 15px;
+        }
+        
+        .job-desc li {
+            margin-bottom: 4px;
+        }
+
+        .thesis-info {
+            font-size: 13px;
+            color: var(--text-color);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background: none;
+                padding: 0;
+                align-items: flex-start;
+                justify-content: flex-start;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cv-container {
+                width: 210mm;
+                height: 296mm; /* slightly under 297 to avoid overflow blank pages */
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+                overflow: hidden;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 40px;
+            }
+            
+            /* Break adjustments to optimize 1 page flow */
+            .main-content {
+                gap: 20px;
+            }
+            .timeline-item {
+                margin-bottom: 12px;
+            }
+            .section-title {
+                margin-bottom: 12px;
+                padding-bottom: 5px;
+            }
+            .job-desc li {
+                margin-bottom: 2px;
+            }
+        }
+        
+        /* Ensure responsiveness on screens */
+        @media screen and (max-width: 768px) {
+            .cv-container {
+                flex-direction: column;
+            }
+            .sidebar, .main-content {
+                width: 100%;
+            }
+            body {
+                padding: 0;
+            }
+            .cv-container {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div style="text-align: center;">
+                <img src="IMG_20260217_201152.jpg" alt="Hoang Minh Phan" class="profile-pic">
+                <div class="name-container">Hoang Minh Phan (Kady)</div>
+                <div class="role">Sourcing Manager</div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Contact</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>minhkady@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/hoang-minh-phan-kady-0b7b211a4</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Da Nang City, Vietnam</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Skills</h3>
+                <ul class="skills-list">
+                    <li>Strategic Sourcing</li>
+                    <li>Procurement</li>
+                    <li>Export-Import Logistics</li>
+                    <li>Supply Chain Management</li>
+                    <li>International Trade</li>
+                    <li>Problem Solving</li>
+                    <li>Data & Tourism Analysis</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Languages</h3>
+                <ul class="lang-list">
+                    <li>
+                        Vietnamese
+                        <span class="lang-level">Native or Bilingual</span>
+                    </li>
+                    <li>
+                        English
+                        <span class="lang-level">Professional Working</span>
+                    </li>
+                    <li>
+                        Chinese
+                        <span class="lang-level">Limited Working</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <section>
+                <h2 class="section-title"><i class="fas fa-user"></i> Professional Summary</h2>
+                <p class="summary-text">
+                    An outstanding MBA Graduate with proven working experience in management, sales, export/import and quantitative research background. Passionate about international trade, global development and digital transformation. A dynamic team player and quick learner who easily adapts to multicultural working environments and always seeks challenges.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="job-title">Sourcing Manager</div>
+                        <div class="date-location">Nov 2022 - Present<br>Da Nang City, VN</div>
+                    </div>
+                    <div class="company">OneLink Holdings</div>
+                    <ul class="job-desc">
+                        <li>Manage and develop sourcing team to improve efficiency and supplier performance.</li>
+                        <li>Work with customers to understand product requirements and prepare accurate quotations.</li>
+                        <li>Build relationships with local/international suppliers to secure best pricing and quality.</li>
+                        <li>Coordinate with account managers, suppliers, and forwarders for timely delivery.</li>
+                        <li>Identify alternative suppliers to strengthen supply capability and support business growth.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="job-title">Export-Import Manager</div>
+                        <div class="date-location">Jun 2020 - Aug 2022<br>Da Nang City, VN</div>
+                    </div>
+                    <div class="company">Viet Huong Ceramics</div>
+                    <ul class="job-desc">
+                        <li>Managed import/export processes ensuring compliance with government laws and licensing.</li>
+                        <li>Developed systems/policies for administering documentation for merchandises.</li>
+                        <li>Resolved complex escalated issues with clients, customs officials, shippers, and agents.</li>
+                        <li>Managed and monitored documentation, customer services, and operation staff.</li>
+                        <li>Responsible for sales of existing products to expand the consumer base.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="job-title">Store Clerk</div>
+                        <div class="date-location">May 2018 - Mar 2020<br>Kaohsiung City, TW</div>
+                    </div>
+                    <div class="company">EEC Elite Express</div>
+                    <ul class="job-desc">
+                        <li>Greeted guests and provided information regarding Southeast Asian products, remittances, sea/air freight forwarding, and airline tickets.</li>
+                        <li>Maintained a well-organized storefront and stockroom aligned with company image.</li>
+                        <li>Strived to achieve and exceed monthly sales goals.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="margin-bottom: 0;">
+                    <div class="timeline-header">
+                        <div class="job-title">Export - Import Dept. Staff</div>
+                        <div class="date-location">Nov 2014 - Feb 2018<br>Ho Chi Minh City, VN</div>
+                    </div>
+                    <div class="company">Hung Vuong Corporation (HVG)</div>
+                    <ul class="job-desc">
+                        <li><strong>Sales:</strong> Sought prospective clients to sell seafood globally. Organized company booths in annual exhibitions (China, US, Belgium, Domestic). Negotiated deals and coordinated packaging requirements.</li>
+                        <li><strong>Documentation:</strong> Handled import/export documents and customs procedures. Applied for C/O, payment documents, permits, and kept track of cargo status.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="job-title">Master's Degree, Business Administration</div>
+                        <div class="date-location">2018 - 2020</div>
+                    </div>
+                    <div class="company">I-Shou University | Kaohsiung City, Taiwan</div>
+                    <div class="thesis-info">Thesis: Relationships among place attachment, perceived value, loyalty, and revisit intention of international tourists toward homestay. The case in Hoi An, Vietnam.</div>
+                </div>
+
+                <div class="timeline-item" style="margin-bottom: 0;">
+                    <div class="timeline-header">
+                        <div class="job-title">Bachelor's Degree, International Economic Relations</div>
+                        <div class="date-location">2010 - 2014</div>
+                    </div>
+                    <div class="company">University of Economics and Law | Vietnam</div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>
